@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 14 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 215 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 350 100% 59%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --border: 0 0% 0%;
+    --input: 0 0% 93%;
+    --ring: 0 0% 0%;
+    
+    --radius: 0px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    @apply border-4 border-primary;
+    box-shadow: 8px 8px 0px #000000;
+    transition: all 0.2s ease;
+  }
+  
+  .brutal-border:hover {
+    box-shadow: 12px 12px 0px #000000;
+    transform: translate(-4px, -4px);
+  }
+  
+  .brutal-btn {
+    @apply px-6 py-2 text-lg font-bold uppercase transition-all duration-200;
+    transform: skew(-2deg);
+  }
+  
+  .brutal-btn:hover {
+    transform: skew(-2deg) scale(1.05);
+  }
+  
+  .brutal-btn:active {
+    transform: skew(-2deg) scale(0.95);
+  }
+  
+  .category-marker {
+    @apply absolute top-2 -left-3 transform -rotate-12 z-10 px-2 text-sm font-bold uppercase;
+  }
+  
+  .thread-item {
+    transition: transform 0.3s ease;
+  }
+  
+  .thread-item:hover {
+    transform: translateX(10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 2px solid #f1f1f1;
+}
